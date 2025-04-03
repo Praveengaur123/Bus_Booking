@@ -1,7 +1,7 @@
 
 const express=require('express')
 
-const database=require('./utils/database')
+const sequelize=require('./utils/database')
 
 const studentRoute=require('./route/studentRoute')
 
@@ -18,7 +18,10 @@ app.get('',(req,res)=>{
 app.use('/student',studentRoute)
 
 app.use('/bus',busRoute)
-
-app.listen(3000, () => {
-    console.log(`Server running on http://localhost:3000`);
-});
+sequelize.sync()
+.then(()=>{
+    app.listen(3000, () => {
+        console.log(`Server running on http://localhost:3000`);
+    });
+})
+.catch(err=>console.log(err))

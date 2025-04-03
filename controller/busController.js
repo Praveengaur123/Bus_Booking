@@ -1,4 +1,3 @@
-const { get } = require('../route/studentRoute')
 const database=require('../utils/database')
 
 const addBuses=(req,res)=>{
