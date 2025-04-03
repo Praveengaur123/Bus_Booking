@@ -1,6 +1,33 @@
 
 const database=require('../utils/database')
 
+const getEntries=(req,res)=>{
+    const {email,name}=req.body||{}
+
+    const getQuery=`SELECT * FROM Users`
+
+    let params=[]
+
+    if(email&&name){
+        getQuery+=`WHERE email=?AND name=?`
+        params=[email,name]
+    }
+
+    database.execute(getQuery,params,(err,result)=>{
+        if(err){
+            console.log(err.message)
+            res.status(500).send(err.message)
+            return
+        }
+        if(result.affectedRows===0){
+            res.status(404).send("data was not found")
+            return
+        }
+        res.status(200).send(result)
+    })
+
+}
+
 const addEntries=(req,res)=>{
     const {email,name}=req.body
 
@@ -60,5 +87,6 @@ const deleteEntries=(req,res)=>{
 module.exports={
     addEntries,
     updateEntries,
-    deleteEntries
+    deleteEntries,
+    getEntries
 }

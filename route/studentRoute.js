@@ -4,7 +4,7 @@ const studentController=require('../controller/studentController')
 
 const router =express.Router()
 
-// router.get('')
+router.get('/getUser',studentController.getEntries)
 
 router.post('/add',studentController.addEntries)
 
