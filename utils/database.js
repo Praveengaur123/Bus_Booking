@@ -5,17 +5,17 @@ const Sequelize=require('sequelize')
 const sequelize=new Sequelize('bus-booking','root','Pra0@123',{
     host:'localhost',
     dialect:'mysql'
-});
+})
 
-(async ()=>{
-    try{
-await sequelize.authenticate();
-console.log('Succesfully connected to the database')
-}
-catch(error){
-console.log(error)
-}})();
-module.export=sequelize
+// (async ()=>{
+//     try{
+// await sequelize.authenticate();
+// console.log('Succesfully connected to the database')
+// }
+// catch(error){
+// console.log(error)
+// }})();
+module.exports=sequelize
 
 
 // const mySql=require('mysql2')

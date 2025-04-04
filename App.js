@@ -20,10 +20,10 @@ app.use('/student',studentRoute)
 app.use('/bus',busRoute)
 
 sequelize.sync()
-.then((result)=>{
-    app.listen(3000, () => {
-        console.log(`Server running on http://localhost:3000`);
-    });
+.then(result=>{
+    app.listen(3000)
+    console.log(`Server running on http://localhost:3000`);
+   
 })
 .catch(err=>{
     console.log(err)
