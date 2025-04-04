@@ -1,8 +1,8 @@
 
 // ensure database connection
-const Sequleize=require('sequelize')
+const Sequelize=require('sequelize')
 
-const sequelize=new Sequleize('bus-booking','root','Pra0@123',{
+const sequelize=new Sequelize('bus-booking','root','Pra0@123',{
     host:'localhost',
     dialect:'mysql'
 });

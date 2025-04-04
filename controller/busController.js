@@ -1,4 +1,4 @@
-const database=require('../utils/database')
+const database=require('../model/student')
 
 const addBuses=(req,res)=>{
     const {busNumber,totalSeats,availableSeats}=req.body
