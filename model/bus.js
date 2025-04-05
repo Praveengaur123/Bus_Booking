@@ -1,25 +1,28 @@
 const Sequelize=require('sequelize')
 
 const sequelize=require('../utils/database')
-console.log("Entered in database")
 
-const UserTable=sequelize.define('User',{
+const busTable=sequelize.define('Buses',{
+
     id:{
         type:Sequelize.INTEGER,
         autoIncrement:true,
         allowNull:false,
         primaryKey:true
     },
-    email:{
-        type:Sequelize.STRING,
+    busNumber:{
+        type:Sequelize.INTEGER,
         allowNull:false,
         unique:true
     },
-    name:{
-        type:Sequelize.STRING,
+    totalSeats:{
+        type:Sequelize.INTEGER,
+        allowNull:false
+    },
+    availbleSeats:{
+        type:Sequelize.INTEGER,
         allowNull:false
     }
 })
 
-module.exports=UserTable
-
+module.export=busTable
