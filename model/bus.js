@@ -3,7 +3,6 @@ const Sequelize=require('sequelize')
 const sequelize=require('../utils/database')
 
 const busTable=sequelize.define('Buses',{
-
     id:{
         type:Sequelize.INTEGER,
         autoIncrement:true,
@@ -19,10 +18,10 @@ const busTable=sequelize.define('Buses',{
         type:Sequelize.INTEGER,
         allowNull:false
     },
-    availbleSeats:{
+    availableSeats:{
         type:Sequelize.INTEGER,
         allowNull:false
     }
 })
 
-module.export=busTable
+module.exports=busTable

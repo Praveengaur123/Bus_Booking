@@ -2,6 +2,8 @@ const Sequelize=require('sequelize')
 
 const sequelize=require('../utils/database')
 
+const bookingTable=require('./booking')
+
 const paymentTable=sequelize.define('payment',{
     id:{
         type:Sequelize.INTEGER,
@@ -14,14 +16,16 @@ const paymentTable=sequelize.define('payment',{
         allowNull:true
     },
     paymentStatus:{
-        tyep:Sequelize.ENUM("Failed","Completed","Pending"),
+        type:Sequelize.ENUM("Failed","Completed","Pending"),
         allowNull:true,
     },
     bookingID:{
-        tyep:Sequelize.INTEGER,
+        type:Sequelize.INTEGER,
         allowNull:true,
     }
-
 })
+
+bookingTable.hasMany(paymentTable)
+paymentTable.belongsTo(bookingTable)
 
 module.exports=paymentTable
