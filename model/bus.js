@@ -2,6 +2,7 @@ const Sequelize=require('sequelize')
 
 const sequelize=require('../utils/database')
 
+
 const busTable=sequelize.define('Buses',{
     id:{
         type:Sequelize.INTEGER,
@@ -22,6 +23,12 @@ const busTable=sequelize.define('Buses',{
         type:Sequelize.INTEGER,
         allowNull:false
     }
+},
+{
+    timestamps:false
+
 })
+
+
 
 module.exports=busTable

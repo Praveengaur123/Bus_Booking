@@ -17,6 +17,9 @@ const bookingTable=sequelize.define('booking',{
         type:Sequelize.INTEGER,
         allowNull:true
     },
+},
+{
+    timestamps:false
 })
 
 // Association

@@ -7,6 +7,10 @@ const studentRoute=require('./route/studentRoute')
 
 const busRoute=require('./route/busRoute')
 
+const paymentRoute=require('./route/paymentRoute')
+
+const bookingRoute=require('./route/bookingRoute')
+
 const app=express()
 
 app.use(express.json())
@@ -18,6 +22,10 @@ app.get('',(req,res)=>{
 app.use('/student',studentRoute)
 
 app.use('/bus',busRoute)
+
+app.use('/payment',paymentRoute)
+
+app.use('/booking',bookingRoute)
 
 sequelize.sync()
 .then(result=>{

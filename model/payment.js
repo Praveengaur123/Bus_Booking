@@ -20,9 +20,13 @@ const paymentTable=sequelize.define('payment',{
         allowNull:true,
     },
     bookingID:{
-        type:Sequelize.INTEGER,
-        allowNull:true,
+        type:Sequelize.STRING,
+        allowNull:false,
     }
+},
+{
+    timestamps:false
+
 })
 
 bookingTable.hasMany(paymentTable)

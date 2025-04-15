@@ -19,6 +19,10 @@ const UserTable=sequelize.define('User',{
         type:Sequelize.STRING,
         allowNull:false
     }
+},
+{
+    timestamps:false
+
 })
 
 module.exports=UserTable
